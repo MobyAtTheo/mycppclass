@@ -22,6 +22,6 @@ public:
     void printAll();
     void printByDegreeProgram(DegreeProgram);
     void printInvalidEmails(); // Need to check for spaces, and have @ and . characters
-    void printAverageDaysInCourse(); // Prints the average time for all courses for each student
+    void printAverageDaysInCourse(string id); // Prints the average time for all courses for each student
     void remove(string); // Remove student by ID and print error when it's not found
 };
