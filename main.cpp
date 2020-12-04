@@ -7,8 +7,8 @@ using std::endl;
 using std::string;
 
 int main() {
-    cout << " Scripting and Programming - Applications | C867 | C++ " << endl;
-    cout << " WGU ID #000570074 - Andrew Silkroski " << endl << endl << endl;
+    cout << " Scripting and Programming | C++ " << endl;
+    cout << " - Andrew Silkroski " << endl << endl << endl;
 
     const string studentData[] =
     {
@@ -16,7 +16,7 @@ int main() {
             "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
             "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
             "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-            "A5,Andrew,Silkroski,asilkro@wgu.edu,34,30,51,28,SOFTWARE",
+            "A5,Andrew,Silkroski,andrewsemail@gmail.om,34,30,51,28,SOFTWARE",
     };
     int sizeSD = sizeof(studentData)/sizeof(studentData[0]);
 
@@ -40,8 +40,12 @@ int main() {
     roster.printInvalidEmails();
     cout << endl;
 
-    cout << "Displaying average days in course: " << endl;
-    roster.printAverageDaysInCourse();
+    cout << "Providing average days per course by ID: " << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        string id = roster.classRosterArray[i]->GetID();
+        roster.printAverageDaysInCourse(id);
+    }
 
     cout << "Removing student with ID A3" << endl;
     roster.remove("A3"); // Expect to execute
