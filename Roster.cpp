@@ -89,16 +89,31 @@ void Roster::printInvalidEmails() {
     }
 }
 
-void Roster::printAverageDaysInCourse() {
-    int sum = 0; 
+// This worked for outputting all students, but didn't use studentID as parameter
+/*void Roster::printAverageDaysInCourse() {
+    int sum = 0;
     for (int i = 0; i < numStudents; i++) {
         sum += classRosterArray[i]->GetDaysInCourse1();
         sum += classRosterArray[i]->GetDaysInCourse2();
         sum += classRosterArray[i]->GetDaysInCourse3();
-        cout << classRosterArray[i]->GetID() << ": " << sum/3 << endl;
+        cout << classRosterArray[i]->GetID() << ": " << sum / 3 << endl;
         sum = 0;
     }
     cout << endl;
+};*/
+
+void Roster::printAverageDaysInCourse(string id) {
+    int sum = 0;
+    for (int i = 0; i < numStudents; i++)
+    {
+        if (classRosterArray[i]->GetID() == id)
+        {
+            sum += classRosterArray[i]->GetDaysInCourse1();
+            sum += classRosterArray[i]->GetDaysInCourse2();
+            sum += classRosterArray[i]->GetDaysInCourse3();
+            cout << classRosterArray[i]->GetID() << ": " << sum / 3.0 << endl << endl;
+        }
+    }
 };
 
 void Roster::remove(string id) {
